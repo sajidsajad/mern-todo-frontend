@@ -83,7 +83,9 @@ function TodoItem({ todo, onDelete, onUpdate }) {
             {todo.title}
           </span>
           {todo.description && <p>{todo.description}</p>}
-          <button onClick={() => setIsEditing(true)}>Edit</button>
+          {!todo.completed && (
+            <button onClick={() => setIsEditing(true)}>Edit</button>
+          )}
           <button onClick={handleDelete}>Delete</button>
         </div>
       )}
